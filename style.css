@@ -1,15 +1,70 @@
-html, body { 
-    font-family: sans-serif; 
-    text-align: center; 
-    height: 100%; 
-    margin: 0; 
-    padding: 0; 
-    width: 100%; 
-    } 
-.container { 
-    margin: auto; 
-    text-align: center; 
-    } 
+/* Resetowanie domyślnych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #f8f9fa;
+color: #333;
+line-height: 1.6;
+padding: 20px;
+}
+
+.container {
+max-width: 700px;
+margin: 0 auto;
+background: #fff;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+font-size: 2rem;
+margin-bottom: 20px;
+color: #db4938;
+text-align: center;
+}
+
+ul#news-list {
+list-style-type: none;
+padding: 0;
+}
+
+ul#news-list li {
+background-color: #f1f1f1;
+margin-bottom: 12px;
+padding: 15px 20px;
+border-left: 6px solid #db4938;
+border-radius: 8px;
+transition: background-color 0.3s;
+}
+
+ul#news-list li:hover {
+background-color: #e9ecef;
+}
+
+button#subscribe {
+display: block;
+width: 100%;
+padding: 12px;
+margin-top: 25px;
+background-color: #db4938;
+color: #fff;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button#subscribe:hover {
+background-color: #c13e2e;
+}
+  
 main { 
     padding: 2rem; 
     font-size: 1rem; 
