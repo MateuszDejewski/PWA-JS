@@ -47,7 +47,7 @@ ul#news-list li:hover {
 background-color: #e9ecef;
 }
 
-button#subscribe {
+button {
 display: block;
 width: 100%;
 padding: 12px;
@@ -61,7 +61,7 @@ cursor: pointer;
 transition: background-color 0.3s;
 }
 
-button#subscribe:hover {
+button:hover {
 background-color: #c13e2e;
 }
   
