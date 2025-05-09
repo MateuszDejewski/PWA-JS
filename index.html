@@ -25,6 +25,61 @@
         </ul>
         <button id="subscribe">Włącz powiadomienia</button>
     </div>
-    <script src="js/main.js"></script> 
+    <script src="js/main2.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>
+    <script>
+    
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAWTYZnfoPq2eImwcDmSoqq7izFN6e50ps",
+            authDomain: "pwajs-91d0f.firebaseapp.com",
+            projectId: "pwajs-91d0f",
+            storageBucket: "pwajs-91d0f.firebasestorage.app",
+            messagingSenderId: "641751115148",
+            appId: "1:641751115148:web:25f5424fe180565b11e2a9",
+            measurementId: "G-N4Y02JV9QB"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    
+        firebase.initializeApp(firebaseConfig);
+        const messaging = firebase.messaging();
+    
+        document.getElementById('subscribe').addEventListener('click', async () => {
+          try {
+            const permission = await Notification.requestPermission();
+            if (permission === 'granted') {
+              const token = await messaging.getToken({
+                vapidKey: "TWOJ_PUBLICZNY_VAPID_Z_FIREBASE"
+              });
+              console.log('Token:', token);
+              alert('Subskrybowano! Token w konsoli.');
+            } else {
+              alert('Powiadomienia zostały zablokowane.');
+            }
+          } catch (err) {
+            console.error('Błąd podczas subskrypcji:', err);
+          }
+        });
+    
+        
+        messaging.onMessage(payload => {
+          console.log('Nowa wiadomość:', payload);
+          new Notification(payload.notification.title, {
+            body: payload.notification.body,
+            icon: payload.notification.icon
+          });
+        });
+      </script> -->
 </body> 
 </html>  
