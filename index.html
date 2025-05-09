@@ -70,8 +70,8 @@
           });
         });
         document.getElementById('notification').addEventListener('click', () => {
-            self.registration.showNotification(title, {
-            body: body,
+            const notification = new Notification("Nowe powiadomienie", {
+            body: "Sprawdź nowe wiadomości w aplikacji",
             icon: '/images/favicon.ico',
         });
         })
