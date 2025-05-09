@@ -11,7 +11,7 @@ window.onload = () => {
           if (permission === 'granted') {
             const subscription = await reg.pushManager.subscribe({
               userVisibleOnly: true,
-              applicationServerKey: urlBase64ToUint8Array('YOUR_PUBLIC_VAPID_KEY')
+              applicationServerKey: urlBase64ToUint8Array(process.env.VAPID_PUBLIC_KEY)
             });
 
             // Tu wysyłamy subskrypcję na backend
