@@ -4,7 +4,7 @@ window.onload = () => {
   'use strict';
 
   if ('serviceWorker' in navigator && 'PushManager' in window) {
-    navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('/sw.js')
       .then(reg => {
         console.log('SW zarejestrowany:', reg);
 
