@@ -2,19 +2,21 @@ const express = require('express');
 const webpush = require('web-push');
 const bodyParser = require('body-parser');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 
-const vapidKeys = webpush.generateVAPIDKeys(); // lub raz wygeneruj i zapisz
+const publicVapidKey = process.env.VAPID_PUBLIC_KEY;
+const privateVapidKey = process.env.VAPID_PRIVATE_KEY;
+
 webpush.setVapidDetails(
   'mailto:admin@example.com',
-  vapidKeys.publicKey,
-  vapidKeys.privateKey
+  publicVapidKey,
+  privateVapidKey
 );
 
-console.log('VAPID Public Key:', vapidKeys.publicKey); // <- użyj w app.js
 
 let subscriptions = [];
 
@@ -37,4 +39,4 @@ app.get('/send', async (req, res) => {
   res.send('Powiadomienia wysłane');
 });
 
-app.listen(3000, () => console.log('Serwer na http://localhost:3000'));
+app.listen(3000, () => console.log('Serwer na porcie 3000'));

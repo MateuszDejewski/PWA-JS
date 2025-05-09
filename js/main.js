@@ -12,7 +12,7 @@ document.getElementById('subscribe').addEventListener('click', async () => {
   const reg = await navigator.serviceWorker.ready;
   const sub = await reg.pushManager.subscribe({
     userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array('BJcj29EU6Te_11v0Qrsez4S2sMQNtNXkVzBIjCFsa1OjkWfDbEiCWbpdEoFt0Gz1tjlgx0lP6Au7PRVfpaTTVew')
+    applicationServerKey: urlBase64ToUint8Array('BHkoz373H0EVMQO9mxRWX6AwOj1x457KeYIHOFtBPAt9ngeB26c4y0wVXFX9-2bXsRDpCBQ3tNFf82rTC2bCVAI')
   });
 
   // Wyślij subskrypcję na serwer
