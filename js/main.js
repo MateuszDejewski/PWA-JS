@@ -1,3 +1,5 @@
+const publicKey = 'BPkXGVaL43NW87LA4iAbJ4FTttTEEiRSYjFnRpTXNx4BUZmridlW1C70Zv871y6vHY9v7gEnqL3gPsLhgTBxVjE';
+
 window.onload = () => {
   'use strict';
 
@@ -11,7 +13,7 @@ window.onload = () => {
           if (permission === 'granted') {
             const subscription = await reg.pushManager.subscribe({
               userVisibleOnly: true,
-              applicationServerKey: urlBase64ToUint8Array(process.env.VAPID_PUBLIC_KEY)
+              applicationServerKey: urlBase64ToUint8Array(publicKey)//process.env.VAPID_PUBLIC_KEY)
             });
 
             // Tu wysyłamy subskrypcję na backend
