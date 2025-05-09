@@ -16,7 +16,7 @@ document.getElementById('subscribe').addEventListener('click', async () => {
   });
 
   // Wyślij subskrypcję na serwer
-  await fetch('/subscribe', {
+  await fetch('/api/subscribe', {
     method: 'POST',
     body: JSON.stringify(sub),
     headers: { 'Content-Type': 'application/json' }
