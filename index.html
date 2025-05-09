@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar" content="#db4938"> 
     <meta name="theme-color" content="#db4938"> 
     <meta name="apple-mobile-web-app-title" content="PWA PIAC"> 
@@ -24,57 +24,8 @@
         <li><strong>05.05.2025:</strong> Wystartowaliśmy z aplikacją!</li>
         </ul>
         <button id="subscribe">Włącz powiadomienia</button>
-        <button id="notification">Notify</button>
+
     </div>
-    <script src="js/main2.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>
-    <script>
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAWTYZnfoPq2eImwcDmSoqq7izFN6e50ps",
-            authDomain: "pwajs-91d0f.firebaseapp.com",
-            projectId: "pwajs-91d0f",
-            storageBucket: "pwajs-91d0f.firebasestorage.app",
-            messagingSenderId: "641751115148",
-            appId: "1:641751115148:web:25f5424fe180565b11e2a9",
-            measurementId: "G-N4Y02JV9QB"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const messaging = firebase.messaging();
-    
-        document.getElementById('subscribe').addEventListener('click', async () => {
-          try {
-            const permission = await Notification.requestPermission();
-            if (permission === 'granted') {
-              const token = await messaging.getToken({
-                vapidKey: "TWOJ_PUBLICZNY_VAPID_Z_FIREBASE"
-              });
-              console.log('Token:', token);
-              alert('Subskrybowano! Token w konsoli.');
-            } else {
-              alert('Powiadomienia zostały zablokowane.');
-            }
-          } catch (err) {
-            console.error('Błąd podczas subskrypcji:', err);
-          }
-        });
-    
-        
-        messaging.onMessage(payload => {
-          console.log('Nowa wiadomość:', payload);
-          new Notification(payload.notification.title, {
-            body: payload.notification.body,
-            icon: payload.notification.icon
-          });
-        });
-        document.getElementById('notification').addEventListener('click', () => {
-            const notification = new Notification("Nowe powiadomienie", {
-            body: "Sprawdź nowe wiadomości w aplikacji",
-            icon: '/images/favicon.ico',
-        });
-        })
-      </script>
+    <script src="/js/main.js"></script>
 </body> 
 </html>  
