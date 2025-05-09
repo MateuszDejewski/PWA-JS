@@ -30,7 +30,7 @@ export const getNotificationToken = async () => {
 
     // Uzyskanie tokenu do subskrypcji
     const token = await getToken(messaging, {
-      vapidKey: "TWOJ_KLUCZ_PUBLICZNY_VAPID",  // Twój klucz publiczny VAPID
+      vapidKey: "BHUiyJXyYEq_6W0bQ5-5CH-MIPdqitX5K-JvjbxqIvgOv7s4wTN0yHdOIAVzjjjbkdaj4TiuVepCreufdl-hOOI",  // Twój klucz publiczny VAPID
     });
 
     if (token) {
