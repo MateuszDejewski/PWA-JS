@@ -1,4 +1,4 @@
-const publicKey = 'BPkXGVaL43NW87LA4iAbJ4FTttTEEiRSYjFnRpTXNx4BUZmridlW1C70Zv871y6vHY9v7gEnqL3gPsLhgTBxVjE';
+const publicKey = 'BHkoz373H0EVMQO9mxRWX6AwOj1x457KeYIHOFtBPAt9ngeB26c4y0wVXFX9-2bXsRDpCBQ3tNFf82rTC2bCVAI';
 
 window.onload = () => {
   'use strict';
